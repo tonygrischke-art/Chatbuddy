@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="#88000000"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/buddyImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@android:drawable/ic_menu_compass"
+            android:contentDescription="Chat Buddy" />
+
+        <TextView
+            android:id="@+id/expressionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="😊"
+            android:textSize="24sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi!"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+</FrameLayout>
