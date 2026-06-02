@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <!-- Body -->
+    <path android:fillColor="#FF9800" android:pathData="M25,55 C25,70 55,70 55,55 L55,40 C55,25 55,25 40,25 C25,25 25,25 25,40 Z" />
+    <!-- Head -->
+    <path android:fillColor="#FFCC80" android:pathData="M20,40 C20,22 60,22 60,40 C60,55 55,60 40,60 C25,60 20,55 20,40 Z" />
+    <!-- Crying streaming eyes -->
+    <path android:fillColor="#333333" android:pathData="M30,34 C32,32 38,32 40,34 C36,36 32,36 30,34 Z" />
+    <path android:fillColor="#333333" android:pathData="M40,34 C42,32 48,32 50,34 C46,36 42,36 40,34 Z" />
+    <!-- Streaming tears -->
+    <path android:fillColor="#42A5F5" android:pathData="M30,40 C30,38 32,38 32,52 C32,56 28,56 28,52 C28,46 30,44 30,40 Z" />
+    <path android:fillColor="#42A5F5" android:pathData="M48,40 C48,38 50,38 50,52 C50,56 46,56 46,52 C46,46 48,44 48,40 Z" />
+    <path android:fillColor="#42A5F5" android:fillAlpha="0.6" android:pathData="M26,44 C26,42 28,42 28,56 C28,60 24,60 24,56 Z" />
+    <path android:fillColor="#42A5F5" android:fillAlpha="0.6" android:pathData="M52,44 C52,42 54,42 54,56 C54,60 50,60 50,56 Z" />
+    <!-- Crying mouth -->
+    <path android:fillColor="#D32F2F" android:pathData="M34,50 C34,48 38,46 40,46 C42,46 46,48 46,50 C46,54 42,56 40,56 C38,56 34,54 34,50 Z" />
+    <!-- Snot bubble -->
+    <path android:fillColor="#81D4FA"
+        android:fillAlpha="0.7"
+        android:pathData="M54,44 C54,38 58,36 62,40 C66,44 64,48 60,46 Z" />
+    <!-- Hair -->
+    <path android:fillColor="#5D4037" android:pathData="M35,20 C35,14 45,14 45,20 Q40,18 35,20 Z" />
+    <path android:fillColor="#5D4037" android:pathData="M30,24 C28,18 38,16 40,22 Z" />
+    <path android:fillColor="#5D4037" android:pathData="M50,24 C52,18 42,16 40,22 Z" />
+</vector>

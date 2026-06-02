@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="80dp"
+    android:height="80dp"
+    android:viewportWidth="80"
+    android:viewportHeight="80">
+    <!-- Body -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M25,55 C25,70 55,70 55,55 L55,40 C55,25 55,25 40,25 C25,25 25,25 25,40 Z" />
+    <!-- Head -->
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M20,40 C20,22 60,22 60,40 C60,55 55,60 40,60 C25,60 20,55 20,40 Z" />
+    <!-- Happy squint eyes -->
+    <path
+        android:fillColor="#333333"
+        android:strokeWidth="2.5"
+        android:pathData="M28,38 Q34,32 40,38" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#333333"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M28,38 Q34,32 40,38" />
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#333333"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M40,38 Q46,32 52,38" />
+    <!-- Big smile -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#333333"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M30,48 Q40,58 50,48" />
+    <!-- Cheeks -->
+    <path
+        android:fillColor="#FFAB91"
+        android:fillAlpha="0.6"
+        android:pathData="M24,44 C24,40 28,40 28,44 C28,48 24,48 24,44 Z" />
+    <path
+        android:fillColor="#FFAB91"
+        android:fillAlpha="0.6"
+        android:pathData="M52,44 C52,40 56,40 56,44 C56,48 52,48 52,44 Z" />
+    <!-- Hair -->
+    <path android:fillColor="#5D4037" android:pathData="M35,20 C35,14 45,14 45,20 Q40,18 35,20 Z" />
+    <path android:fillColor="#5D4037" android:pathData="M30,24 C28,18 38,16 40,22 Z" />
+    <path android:fillColor="#5D4037" android:pathData="M50,24 C52,18 42,16 40,22 Z" />
+</vector>

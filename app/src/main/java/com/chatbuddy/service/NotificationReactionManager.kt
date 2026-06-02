@@ -48,7 +48,7 @@ class NotificationReactionManager(private val service: ChatBuddyService) {
         reactions[NotificationType.ALARM] = ReactionConfig(
             expression = BuddyExpression.ANGRY,
             action = null,
-            statusText = "�️ ALARM!"
+            statusText = "⏰ ALARM!"
         )
     }
 
@@ -70,11 +70,10 @@ class NotificationReactionManager(private val service: ChatBuddyService) {
 
     fun processNotification(type: NotificationType) {
         val reaction = reactions[type] ?: return
-        
         reaction.expression?.let { service.triggerExpression(it) }
         reaction.action?.let { service.triggerAction(it) }
         if (reaction.statusText.isNotEmpty()) {
-            service.updateStatus(reaction.statusText)
+            service.updateStatusText(reaction.statusText)
         }
     }
 
@@ -85,37 +84,45 @@ class NotificationReactionManager(private val service: ChatBuddyService) {
     )
 }
 
-class BatteryMonitor(private val service: ChatBuddyService) : BroadcastReceiver() {
+class BatteryMonitor : BroadcastReceiver() {
+    var onBatteryLow: ((Float) -> Unit)? = null
+
     override fun onReceive(context: Context?, intent: Intent?) {
         val level = intent?.getIntExtra(BatteryManager.EXTRA_LEVEL, -1) ?: return
         val scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1)
         val batteryPct = level * 100 / scale.toFloat()
-        
+
         when {
-            batteryPct <= 10 -> service.reactToNotification(NotificationType.LOW_BATTERY)
-            batteryPct <= 20 -> service.updateStatus("🔋 $batteryPct%")
+            batteryPct <= 10 -> onBatteryLow?.invoke(batteryPct)
         }
     }
 }
 
-class NotificationReceiver(private val service: ChatBuddyService) : BroadcastReceiver() {
+class NotificationReceiver : BroadcastReceiver() {
+    var onNotificationReceived: ((NotificationType) -> Unit)? = null
+
     override fun onReceive(context: Context?, intent: Intent?) {
         when (intent?.action) {
-            "com.chatbuddy.MESSAGE_RECEIVED" -> {
-                service.reactToNotification(NotificationType.MESSAGE)
-            }
-            "com.chatbuddy.EMAIL_RECEIVED" -> {
-                service.reactToNotification(NotificationType.EMAIL)
-            }
-            "com.chatbuddy.MISSED_CALL" -> {
-                service.reactToNotification(NotificationType.MISSED_CALL)
-            }
-            "com.chatbuddy.SOCIAL_MENTION" -> {
-                service.reactToNotification(NotificationType.SOCIAL_MENTION)
-            }
-            "com.chatbuddy.REMINDER" -> {
-                service.reactToNotification(NotificationType.REMINDER)
-            }
+            "com.chatbuddy.MESSAGE_RECEIVED" ->
+                onNotificationReceived?.invoke(NotificationType.MESSAGE)
+            "com.chatbuddy.EMAIL_RECEIVED" ->
+                onNotificationReceived?.invoke(NotificationType.EMAIL)
+            "com.chatbuddy.MISSED_CALL" ->
+                onNotificationReceived?.invoke(NotificationType.MISSED_CALL)
+            "com.chatbuddy.SOCIAL_MENTION" ->
+                onNotificationReceived?.invoke(NotificationType.SOCIAL_MENTION)
+            "com.chatbuddy.REMINDER" ->
+                onNotificationReceived?.invoke(NotificationType.REMINDER)
+        }
+    }
+
+    companion object {
+        val FILTER = IntentFilter().apply {
+            addAction("com.chatbuddy.MESSAGE_RECEIVED")
+            addAction("com.chatbuddy.EMAIL_RECEIVED")
+            addAction("com.chatbuddy.MISSED_CALL")
+            addAction("com.chatbuddy.SOCIAL_MENTION")
+            addAction("com.chatbuddy.REMINDER")
         }
     }
 }

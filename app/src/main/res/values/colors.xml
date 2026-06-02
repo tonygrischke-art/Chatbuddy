@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="buddy_bg">#88000000</color>
+    <color name="buddy_text">#FFFFFF</color>
+    <color name="buddy_accent">#FF9800</color>
+</resources>
