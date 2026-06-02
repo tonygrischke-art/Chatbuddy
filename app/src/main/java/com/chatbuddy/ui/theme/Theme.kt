@@ -5,6 +5,7 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 
 private val LightColorScheme = lightColorScheme(
     primary = Color(0xFFFF9800),
@@ -15,7 +16,7 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = Color.White,
     background = Color(0xFFFFFBFE),
     surface = Color(0xFFFFFBFE),
-    surfaceVariant = Color(0FFF5F0EB),
+    surfaceVariant = Color(0xFFF5F0EB),
     error = Color(0xFFBA1A1A),
 )
 
@@ -39,7 +40,7 @@ fun ChatBuddyTheme(
 ) {
     val colorScheme = when {
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = androidx.compose.ui.platform.LocalContext.current
+            val context = LocalContext.current
             if (darkTheme) dynamicDarkColorScheme(context)
             else dynamicLightColorScheme(context)
         }
