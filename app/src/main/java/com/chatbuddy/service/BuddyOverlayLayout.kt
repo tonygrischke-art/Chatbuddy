@@ -82,7 +82,7 @@ class BuddyOverlayLayout(
         addView(container)
     }
 
-    fun performClick() {
+    override fun performClick() {
         // Double-tap logic: single tap = hello reaction, long hold = menu
         triggerExpression(BuddyExpression.HAPPY)
         updateStatusText("Hello! 👋")
