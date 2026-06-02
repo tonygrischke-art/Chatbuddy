@@ -287,7 +287,7 @@ class CustomizationPanel(
             this.text = text
             setTextColor(Color.WHITE)
             textSize = 16f
-            gravity = Gravity.center
+            gravity = Gravity.CENTER
             val lp = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT

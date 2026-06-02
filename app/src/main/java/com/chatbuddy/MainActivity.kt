@@ -20,6 +20,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.chatbuddy.service.ChatBuddyService
+import com.chatbuddy.ui.theme.ChatBuddyTheme
 
 class MainActivity : ComponentActivity() {
 
